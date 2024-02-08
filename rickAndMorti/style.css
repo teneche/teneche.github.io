@@ -39,3 +39,28 @@ main {
 img {
   width: 100%;
 }
+
+div {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+* a {
+  color: black;
+  text-decoration: none;
+}
+#links{
+  border: 1px solid #c8b9b9;
+  padding: 2px;
+  margin: 10px;
+  width: 300px;
+}
+
+#otras-p{
+  font-weight: bold;
+  color: #111;
+  margin: 10px;
+  font-size: 1.5rem;
+}
+
