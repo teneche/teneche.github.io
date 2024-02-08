@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Datos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Datos De La Api</h1>
+    <select id="selectTipoDato">
+        <option value="name">Usuarios</option>
+        <option value="email">Email</option>
+        <option value="phone">Telefono</option>
+        <!-- Agrega más opciones según sea necesario -->
+    </select>
+    <button id="btnObtenerDatos">Obtener Datos</button>
+    <ul id="datos-lista"></ul>
+       
+    <script>
+        document.getElementById('btnObtenerDatos').addEventListener('click', function () {
+            const selectedDataType = document.getElementById('selectTipoDato').value;
+            const apiURL = `https://jsonplaceholder.typicode.com/users`;
+
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(data => {
+                    const datosLista = document.getElementById('datos-lista');
+                    datosLista.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
+
+                    data.forEach(item => {
+                        const listItem = document.createElement('li');
+
+                        // Aquí puedes ajustar qué datos mostrar según el tipo de dato seleccionado
+                        let textContent;
+                        if (selectedDataType === 'name') {
+                            textContent = item.name;
+
+                        } else if (selectedDataType === 'email') {
+                            textContent = item.email;
+                        } else if (selectedDataType === 'phone') {
+                            textContent = item.phone;
+                        }
+
+                        listItem.textContent = textContent;
+                        datosLista.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error al obtener datos:', error));
+                
+        });
+    </script>
+</body>
+
+</html>

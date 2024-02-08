@@ -1,0 +1,15 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+li {
+  font-size: 20px;
+  color: antiquewhite;
+}
+
+ul {
+  background: rgb(65, 61, 61);
+  border-radius: 10px;
+  width: 700px;
+  padding: 0px;
+}

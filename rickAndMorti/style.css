@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center; /* Centrar horizontalmente */
+  font-size: 2rem;
+  display: flex; /* Usar Flexbox */
+  justify-content: center; /* Centrar horizontalmente dentro del contenedor flex */
+  align-items: center; /* Centrar verticalmente dentro del contenedor flex */
+}
+h2 {
+  font-size: 1rem;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Crear columnas flexibles */
+  gap: 20px; /* Espacio entre las tarjetas */
+  justify-content: center; /* Centrar las tarjetas horizontalmente */
+}
+
+.tarjeta {
+  background: linear-gradient(#e2e2e2 10%, #f3e630);
+  padding: 5px;
+  margin: 1px;
+  border-radius: 5px;
+  max-width: 300px; /* La imagen no será más ancha que su contenedor */
+  max-height: 100%; /* La imagen no será más alta que su contenedor */
+
+  -webkit-box-shadow: 23px 22px 30px -34px rgba(224, 33, 224, 0.61);
+  -moz-box-shadow: 23px 22px 30px -34px rgba(224, 33, 224, 0.61);
+  box-shadow: 23px 22px 30px -34px rgba(224, 33, 224, 0.61);
+}
+img {
+  width: 100%;
+}

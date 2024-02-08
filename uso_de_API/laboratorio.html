@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Datos de una API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Tabla con Datos de una API</h2>
+
+    <table border="1" id="miTabla">
+        <caption>Información de Usuarios</caption>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Compañía</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas se añadirán aquí mediante JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // URL de la API que proporciona los datos de los usuarios
+        var url = 'https://jsonplaceholder.typicode.com/users';
+
+        // Obtener referencia a la tabla
+        var tabla = document.getElementById("miTabla");
+        var tbody = tabla.getElementsByTagName("tbody")[0];
+
+        // Hacer la solicitud a la API usando fetch
+        fetch(url)
+            .then(response => response.json()) // Convertir la respuesta a JSON
+            .then(data => {
+                // Iterar sobre los datos de los usuarios y crear filas de la tabla
+                data.forEach(function (usuario) {
+                    var fila = document.createElement("tr");
+
+                    var celdaNombre = document.createElement("td");
+                    celdaNombre.textContent = usuario.name;
+                    fila.appendChild(celdaNombre);
+
+                    var celdaEmail = document.createElement("td");
+                    celdaEmail.textContent = usuario.email;
+                    fila.appendChild(celdaEmail);
+
+                    var celdaCompania = document.createElement("td");
+                    celdaCompania.textContent = usuario.company.name;
+                    fila.appendChild(celdaCompania);
+
+                    tbody.appendChild(fila);
+                });
+            })
+            .catch(error => {
+                console.error('Error al obtener datos de la API:', error);
+            });
+    </script>
+
+</body>
+
+</html>
