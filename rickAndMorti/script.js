@@ -34,6 +34,7 @@ document.getElementById('btnObtenerDatos').addEventListener('click', function ()
         .then(response => response.json())
         .then(data => {
             const main = document.getElementsByTagName("main")[0];
+            main.innerHTML="";
             
             data.results.forEach(item => {
                 const tarjeta = document.createElement("div");
