@@ -8,29 +8,46 @@ document.getElementById('btnObtenerDatos').addEventListener('click', function ()
     const baseURL = "https://rickandmortyapi.com/api/";
     const endpoint = `${selectedDataType}`; // o cualquier otro fragmento específico de la API que necesites
     const linkApi = `${baseURL}${endpoint}`;
+    var dato1;
+    var dato2;
+    var dato3;
 
-    if(endpoint.value==="character"){
-        
+    if(endpoint==="character"){
+        dato1="image";
+        dato2="name";
+        dato3="status";           
     }
+    if (endpoint === "episode") {
+        dato1 = "air_date";
+        dato2 = "name";
+        dato3 = "episode";
+    }
+    if (endpoint === "location") {
+        dato1 = "dimension";
+        dato2 = "name";
+        dato3 = "type";
+    }
+    
+    
 
     fetch(linkApi)
         .then(response => response.json())
         .then(data => {
             const main = document.getElementsByTagName("main")[0];
             
-            data.results.forEach(character => {
+            data.results.forEach(item => {
                 const tarjeta = document.createElement("div");
                 tarjeta.classList.add("tarjeta");
 
                 const imagen = document.createElement("img");
-                imagen.src = character.image;
-                imagen.alt = character.name;
+                imagen.src = `${item[dato1]}`;
+                imagen.alt = `${item[dato1]}`;
 
                 const nombre = document.createElement("h2");
-                nombre.textContent = character.name;
+                nombre.textContent = `${item[dato2]}`;
 
                 const estado = document.createElement("span");
-                estado.textContent = character.status;
+                estado.textContent = `${item[dato3]}`;
 
                 tarjeta.appendChild(imagen);
                 tarjeta.appendChild(nombre);
