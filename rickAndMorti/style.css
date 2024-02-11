@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 h1 {
+  color: #433e3e;
   text-align: center; /* Centrar horizontalmente */
   font-size: 2rem;
   display: flex; /* Usar Flexbox */
@@ -12,6 +13,7 @@ h1 {
   align-items: center; /* Centrar verticalmente dentro del contenedor flex */
 }
 h2 {
+  color: #433e3e;
   font-size: 1rem;
 }
 main {
@@ -40,11 +42,26 @@ img {
   width: 100%;
 }
 
-div {
-  margin-top: 20px;
+
+body{
   display: flex;
   flex-direction: column;
 }
+#selectTipoDato {
+  padding: 2px;
+  width: 200px;
+  }
+
+  #btnObtenerDatos{
+    max-width: 200px;
+    padding: 2px;
+  }
+
+  #select-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 * a {
   color: black;
@@ -57,7 +74,11 @@ div {
   width: 300px;
 }
 
-#otras-p{
+
+
+#otras-paginas{
+  display: flex;
+  flex-direction: row;
   font-weight: bold;
   color: #111;
   margin: 10px;

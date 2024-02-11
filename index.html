@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div>
+    <div id="otras-paginas">
         <p id="otras-p">Otras paginas</p>
         <span id="links">
             <a href="/uso_de_API/notas.html">api de usuarios</a>
@@ -25,16 +25,23 @@
         </span>
 
     </div>
-    <h1>Rick And Morty consumo de Api ver:1.0</h1>
 
-    <select id="selectTipoDato">
-        <option value="character">personajes</option>
-        <option value="episode">capitulos</option>
-        <option value="location">locacion</option>
-        <!-- Agrega más opciones según sea necesario -->
-    </select>
+    <div id="options">
+        <h1>Rick And Morty consumo de Api ver:1.0</h1>
 
-    <button id="btnObtenerDatos">Obtener Datos</button>
+        <div id="select-button">
+            <select id="selectTipoDato">
+                <option value="character">personajes</option>
+                <option value="episode">capitulos</option>
+                <option value="location">locacion</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+
+            <button id="btnObtenerDatos">Obtener Datos</button>
+
+        </div>
+
+    </div>
 
     <main>
 
