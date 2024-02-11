@@ -13,6 +13,9 @@ main {
   gap: 20px; /* Espacio entre las tarjetas */
   justify-content: center; /* Centrar las tarjetas horizontalmente */
 }
+h1 {
+  font-size: 1.2rem;
+}
 .tarjeta {
   background: linear-gradient(#e2e2e2 10%, #f3e630);
   padding: 5px;
@@ -20,41 +23,41 @@ main {
   border-radius: 5px;
   max-width: 250px; /* La imagen no será más ancha que su contenedor */
   max-height: 100%; /* La imagen no será más alta que su contenedor */
-
   -webkit-box-shadow: 23px 22px 30px -34px rgba(224, 33, 224, 0.61);
   -moz-box-shadow: 23px 22px 30px -34px rgba(224, 33, 224, 0.61);
   box-shadow: 23px 22px 30px -34px rgba(224, 33, 224, 0.61);
 }
-.tarjeta img{
-    width: 100%;
+.tarjeta img {
+  width: 100%;
 }
-.tarjeta h2{
-  font-size: .9rem;
+.tarjeta h2 {
+  font-size: 0.9rem;
 }
-h1{
-  font-size: 1.2rem;
+#options {
+  max-width: 800px;
 }
-#options{
-  padding: 10px; 
-  border: 1px solid; 
-}
-main{
+main {
   padding: 10px;
 }
-#otras-paginas{
-  margin-left: 10px;
+body {
+  margin: 10px;
 }
-#otras-paginas a{
+
+#otras-paginas {
+  display: flex;
+  flex-direction: column;
+}
+#otras-paginas a {
+  margin: 2px;
   border-radius: 5px;
-  background-color: #9bdcd3;
+  background-color: #d4d4d4;
   color: #383535;
   border: 1px solid;
   text-decoration: none;
-  margin-right: 20px;
 }
-#selectTipoDato{
-  
+#selectTipoDato {
   border-radius: 5px;
 }
-
-
+#links {
+  margin-bottom: 5px;
+}
